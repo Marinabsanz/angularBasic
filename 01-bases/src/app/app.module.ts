@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ContadorComponent } from './contador/contador.component';
-import { HeroComponent } from './heroes/hero/hero.component';
-import { ListComponent } from './heroes/list/list.component';
+import { HeroesModule } from './heroes/heroes.module';
+import { ContadorModule } from './contador/contador.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContadorComponent,
-    HeroComponent,
-    ListComponent
+   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HeroesModule,
+    ContadorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
