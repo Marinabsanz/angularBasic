@@ -1,0 +1,23 @@
+
+
+
+
+
+<h1>Lista de héroes</h1>
+<ul>
+
+<li *ngFor="let heroe of heroes; let i = index">
+  {{heroe}} $ es el número {{i+1}}
+ </li>
+
+</ul>
+
+<div>  
+<h2> Héroe borrado: </h2>
+<span>  El héroe borrado es: {{heroDeleted}}
+
+</span>
+
+
+</div>
+<button (click)="deleteHero() "> Delete</button>
