@@ -1,11 +1,6 @@
-import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
+
 import { Component} from '@angular/core';
-
-interface Personaje {
-
-  name:string;
-  age:number;
-}
+import { Personaje } from '../interfaces/futurama.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -13,7 +8,6 @@ interface Personaje {
 })
 
 export class MainPageComponent {
-
 
   persons: Personaje []= [ { 
     name: 'Fry',
@@ -24,21 +18,11 @@ export class MainPageComponent {
   age: 29,
 
   },
-  ]
+  ];
 
   newPerson: Personaje = {
-    name:'',
-    age: 0,
-    
+
+    name: 'Zoidberg',
+    age: 50,
   }
-  
-  add() {
-
-    if (this.newPerson.name.trim().length === 0)
-     { return; }
-
-  console.log(this.newPerson)
-  }
-
 }
-

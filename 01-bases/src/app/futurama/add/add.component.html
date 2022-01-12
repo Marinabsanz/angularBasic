@@ -1,0 +1,32 @@
+
+
+  <h3>Añade a {{newPerson.name}}</h3>
+  <hr>
+
+<form (ngSubmit)="add()">
+
+    <input
+    type='text' 
+    placeholder ='Nombre'
+    name= 'nombre'
+    [(ngModel)]='newPerson.name'
+     >
+  
+  <!--  podría usar esto pero con gnModel más limpio y rápido
+  [value]='newPerson.name' 
+  (input)="changeName( $event )" 
+  >   -->
+  <input 
+   type='text'
+   placeholder= 'Especie'
+   name='tipo'
+   [(ngModel)]='newPerson.age'
+   >
+  
+  <button 
+  type ='submit '> 
+  Añadir nuevo Personaje 
+  
+  </button>
+  </form>
+

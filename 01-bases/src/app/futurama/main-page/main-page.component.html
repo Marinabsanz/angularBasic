@@ -1,44 +1,25 @@
 
+
+
 <h1> Futurama</h1>
 <hr>
+
 <div class= 'row'> 
- <div class='col'> 
-     <h3>Personajes</h3>
-     <hr>
-  <ul>
-   <li>Fry - Humano</li>
-   <li>Lila - Mutante</li>
-   <li>Bender - Robot</li>
-   <li>Zoidberg - Cangrejo</li>
-  </ul> 
+      <div class='col'> 
+ 
+    <app-persons [persons]='persons'></app-persons>
 </div>
 
  <div class='col'> 
-     <h3>Añade tus personajes</h3>
-     <hr>
-
-<form (ngSubmit)="add( )">
-
-<input type='text' 
-placeholder ='Nombre'
-name= 'nombre'
-[(ngModel)]='newPerson.name'
->
+ 
+<app-add 
+[persons]="persons"
+[newPerson]="newPerson"
 
 
 
-<!--  podríamosusar esto pero con gnModel más limpio y rápido
-[value]='newPerson.name' 
-(input)="changeName( $event )" 
->   -->
-<input type='text'
- placeholder= 'Especie'
- name='tipo'
- [(ngModel)]='newPerson.age'>
+> </app-add>
 
-<button type ='submit '> Añadir nuevo Personaje </button>
-</form>
 
 </div>
-
 </div>
