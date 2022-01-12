@@ -1,19 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
+import { Component} from '@angular/core';
+
+interface Personaje {
+
+  name:string;
+  age:number;
+}
 
 @Component({
   selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
+  templateUrl: './main-page.component.html'
 })
+
 export class MainPageComponent {
-  public title:string = 'personajes'
 
 
+  persons: Personaje []= [ { 
+    name: 'Fry',
+    age: 30,
+  },
 
-  constructor() { 
+  { name: 'Lila',
+  age: 29,
 
+  },
+  ]
+
+  newPerson: Personaje = {
+    name:'',
+    age: 0,
+    
   }
+  
+  add() {
 
-  ngOnInit(): void {
+    if (this.newPerson.name.trim().length === 0)
+     { return; }
+
+  console.log(this.newPerson)
   }
 
 }

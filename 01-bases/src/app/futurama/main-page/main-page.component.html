@@ -16,12 +16,27 @@
  <div class='col'> 
      <h3>Añade tus personajes</h3>
      <hr>
-<form>
 
-<input type='text' placeholder= 'Nombre'>
-<input type='text' placeholder= 'Especie'>
+<form (ngSubmit)="add( )">
 
-<button > Añadir nuevo Personaje </button>
+<input type='text' 
+placeholder ='Nombre'
+name= 'nombre'
+[(ngModel)]='newPerson.name'
+>
+
+
+
+<!--  podríamosusar esto pero con gnModel más limpio y rápido
+[value]='newPerson.name' 
+(input)="changeName( $event )" 
+>   -->
+<input type='text'
+ placeholder= 'Especie'
+ name='tipo'
+ [(ngModel)]='newPerson.age'>
+
+<button type ='submit '> Añadir nuevo Personaje </button>
 </form>
 
 </div>
