@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 import { Personaje } from '../interfaces/futurama.interface';
+import { FuturamaService } from '../services/futurama.service';
 
 
 
@@ -12,7 +13,7 @@ import { Personaje } from '../interfaces/futurama.interface';
 export class AddComponent {
   
 
-  @Output () onNewPerson: EventEmitter<Personaje> = new EventEmitter();
+  //@Output () onNewPerson: EventEmitter<Personaje> = new EventEmitter();
   
   @Input () newPerson: Personaje = {
     name:'',
@@ -20,12 +21,15 @@ export class AddComponent {
     
   }
   
+constructor(private FuturamaService: FuturamaService){}
+
   add() {
 
     if (this.newPerson.name.trim().length === 0)
      { return; }
 
-  this.onNewPerson.emit(this.newPerson)
+  //this.onNewPerson.emit(this.newPerson)
+  this.FuturamaService.addPerson(this.newPerson);
 
   this.newPerson= {
    name: '',
