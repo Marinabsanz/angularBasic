@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PersonsComponent } from './persons/persons.component';
 import { AddComponent } from './add/add.component';
+import { FuturamaService } from './services/futurama.service';
 
 
 
@@ -17,6 +18,10 @@ import { AddComponent } from './add/add.component';
   imports: [
     CommonModule,
     FormsModule
+  ],
+
+  providers: [
+   FuturamaService
   ],
 
   exports: [

@@ -1,4 +1,5 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
+
 import { Personaje } from '../interfaces/futurama.interface';
 
 
@@ -10,9 +11,10 @@ import { Personaje } from '../interfaces/futurama.interface';
 })
 export class AddComponent {
   
-  @Input() persons: Personaje[]= []; 
 
-  @Input ()newPerson: Personaje = {
+  @Output () onNewPerson: EventEmitter<Personaje> = new EventEmitter();
+  
+  @Input () newPerson: Personaje = {
     name:'',
     age: 0,
     
@@ -23,10 +25,8 @@ export class AddComponent {
     if (this.newPerson.name.trim().length === 0)
      { return; }
 
-  console.log(this.newPerson);
+  this.onNewPerson.emit(this.newPerson)
 
-
-  this.persons.push(this.newPerson);
   this.newPerson= {
    name: '',
    age: 0

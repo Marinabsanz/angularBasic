@@ -1,5 +1,5 @@
 
-import {Component }from '@angular/core';
+import {Component, Input }from '@angular/core';
 
 @Component({ 
 selector: 'app-contador',
@@ -35,6 +35,7 @@ sume() {
 })
 
 export class ContadorComponent {
+
     public title:string = 'Contador App';
     public number: number = 0;
     public base: number = 2;

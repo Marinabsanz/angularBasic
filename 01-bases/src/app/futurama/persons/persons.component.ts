@@ -1,6 +1,6 @@
 import { Component, Input} from '@angular/core';
-import { Personaje } from '../interfaces/futurama.interface';
 
+import { FuturamaService } from '../services/futurama.service';
 
 @Component({
   selector: 'app-persons',
@@ -10,8 +10,16 @@ import { Personaje } from '../interfaces/futurama.interface';
 export class PersonsComponent  {
 
 
-  @Input() persons: Personaje [] = [];
+  //@Input() persons: Personaje [] = [];
+ 
+  get persons(){
+    return this.FuturamaService.persons;
+  }
 
+  constructor (private FuturamaService: FuturamaService)
+   {
+this.FuturamaService
 
-  
+   }
+
 }
