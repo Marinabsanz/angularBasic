@@ -6,6 +6,7 @@
 
      <div class= 'list-group list-reset'>
       <a *ngFor="let item of historic"
+      (click)= 'search(item)'
       href="#"
       class= 'list-group-item list-group-item-action'
       > 

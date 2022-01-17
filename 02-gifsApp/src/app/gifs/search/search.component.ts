@@ -10,11 +10,11 @@ import { GifsService } from '../services/gifs.service';
 export class SearchComponent {
 
 
-//le asigno !  -> non null asertion operator
+//txtSearch!     // non null asertion operator//
   @ViewChild('txtSearch') txtSearch!:ElementRef<HTMLInputElement>;
 
- constructor(private GifsService: GifsService){
- }
+ constructor(private GifsService: GifsService){}
+
 
 
 search() {
@@ -26,7 +26,6 @@ if (value.trim().length== 0){
 }
 
 this.GifsService.searchGifs(value)
-
 
 this.txtSearch.nativeElement.value ='';
   

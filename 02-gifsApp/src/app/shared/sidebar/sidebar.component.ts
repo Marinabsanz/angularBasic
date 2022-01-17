@@ -16,8 +16,11 @@ return this.GifsService.historic;   }
 
 
 
- constructor(private GifsService: GifsService){
+ constructor(private GifsService: GifsService){}
 
+
+ search(gifSearched: string){
+   this.GifsService.searchGifs(gifSearched)
 
  }
 

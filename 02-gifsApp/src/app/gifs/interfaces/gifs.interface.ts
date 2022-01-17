@@ -138,8 +138,7 @@ export interface Pagination {
     offset:      number;
 }
 
-// Converts JSON strings to/from your types
-// and asserts the results of JSON.parse at runtime
+
 export class Convert {
     public static toSearchGifsResponse(json: string): SearchGifsResponse {
         return cast(JSON.parse(json), r("SearchGifsResponse"));
