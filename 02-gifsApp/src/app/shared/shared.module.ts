@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 
-
 @NgModule({
   declarations: [
     SidebarComponent
@@ -14,8 +13,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     CommonModule
   ],
-
-
 
 })
 export class SharedModule { }
