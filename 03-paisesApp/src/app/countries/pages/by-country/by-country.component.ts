@@ -9,16 +9,22 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCountryComponent {
 
-term:string= ''
+term:string= '';
+ifError: boolean =false;
 
   constructor(private CountriesService: CountriesService) { }
 
+  //esto queda anticuado en v rxjs nueva
    search() {
-
+   this.ifError= false;
    this.CountriesService.searchCountry(this.term)
-   .subscribe(resp => {
-     console.log(resp);
-   })
+   .subscribe((countriesresp) => {
+
+    console.log(countriesresp)
+     
+   },(countriesresp)=> { 
+    this.ifError= true;
+   });
 
 
    }

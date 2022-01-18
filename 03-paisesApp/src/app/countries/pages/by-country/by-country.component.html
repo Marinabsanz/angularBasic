@@ -19,11 +19,12 @@
 
 <hr>
 
-<div class= 'alert alert-danger'>
-  No se encontró nada con la búsqueda ------
+<div *ngIf="ifError" 
+  class= 'alert alert-danger'> 
+  No se encontró nada con la búsqueda {{term}}
 </div>
 
-<div class='row'>
+<div *ngIf='!ifError' class='row'>
     <div class='col'>
         <table class= 'table table-hover'>
             <thead>
