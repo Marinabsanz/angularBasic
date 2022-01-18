@@ -50,8 +50,6 @@ const params = new HttpParams()
 
 this.http.get<SearchGifsResponse>(`${ this.serviceUrl }/search`, { params } )
 .subscribe( (response) => {
-
-console.log( response.data )
 this.results = response.data;
 localStorage.setItem('results', JSON.stringify(this.results))
 

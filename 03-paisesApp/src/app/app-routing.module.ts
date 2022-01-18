@@ -1,9 +1,9 @@
 import { Component, NgModule } from "@angular/core"; 
 import { RouterModule, Routes } from "@angular/router";
-import { ByCountryComponent } from './countries/by-country/by-country.component';
-import { ByRegionComponent } from './countries/by-region/by-region.component';
-import { ByCapitalComponent } from './countries/by-capital/by-capital.component';
-import { WatchCountryComponent } from './countries/watch-country/watch-country.component';
+import { ByCountryComponent } from './countries/pages/by-country/by-country.component';
+import { ByRegionComponent } from './countries/pages/by-region/by-region.component';
+import { ByCapitalComponent } from './countries/pages/by-capital/by-capital.component';
+import { WatchCountryComponent } from './countries/pages/watch-country/watch-country.component';
 //import { NotFoundComponent } from './countries/not-found/not-found.component';
 
 

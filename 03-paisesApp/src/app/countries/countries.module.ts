@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ByCapitalComponent } from './by-capital/by-capital.component';
-import { ByCountryComponent } from './by-country/by-country.component';
-import { ByRegionComponent } from './by-region/by-region.component';
-import { WatchCountryComponent } from './watch-country/watch-country.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
+
+import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
+import { ByCountryComponent } from './pages/by-country/by-country.component';
+import { ByRegionComponent } from './pages/by-region/by-region.component';
+import { WatchCountryComponent } from './pages/watch-country/watch-country.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 
@@ -14,10 +16,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ByCountryComponent,
     ByRegionComponent,
     WatchCountryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports:[
     ByCapitalComponent,
