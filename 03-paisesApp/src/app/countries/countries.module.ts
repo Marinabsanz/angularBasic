@@ -4,6 +4,7 @@ import { ByCapitalComponent } from './by-capital/by-capital.component';
 import { ByCountryComponent } from './by-country/by-country.component';
 import { ByRegionComponent } from './by-region/by-region.component';
 import { WatchCountryComponent } from './watch-country/watch-country.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -12,7 +13,8 @@ import { WatchCountryComponent } from './watch-country/watch-country.component';
     ByCapitalComponent,
     ByCountryComponent,
     ByRegionComponent,
-    WatchCountryComponent
+    WatchCountryComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { WatchCountryComponent } from './watch-country/watch-country.component';
     ByCapitalComponent,
     ByCountryComponent,
     ByRegionComponent,
-    WatchCountryComponent
+    WatchCountryComponent,
+    NotFoundComponent
 
   ]
 })
