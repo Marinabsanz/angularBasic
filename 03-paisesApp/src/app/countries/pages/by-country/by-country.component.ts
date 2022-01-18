@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
+import { Country } from '../../interfaces/countries.interface';
+
 
 @Component({
   selector: 'app-by-country',
@@ -9,21 +11,29 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCountryComponent {
 
-term:string= '';
+term:    string= '';
 ifError: boolean =false;
+countries: Country []= [];
 
   constructor(private CountriesService: CountriesService) { }
 
   //esto queda anticuado en v rxjs nueva
-   search() {
+
+   search(term:string) {
+
    this.ifError= false;
+   this.term= term;
+
    this.CountriesService.searchCountry(this.term)
    .subscribe((countriesresp) => {
 
-    console.log(countriesresp)
+    this.countries = countriesresp;
+  console.log(this.countries)
      
-   },(countriesresp)=> { 
+   },(err)=> { 
     this.ifError= true;
+    this.countries  = [];
+    
    });
 
 
