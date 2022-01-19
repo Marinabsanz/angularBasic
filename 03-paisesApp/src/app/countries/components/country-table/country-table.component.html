@@ -11,14 +11,14 @@
 
     <tbody>
        <tr *ngFor="let country of countries; let i= index">
-           <td>{{i+1 }}</td>
+           <td >{{i+1 }}</td>
            <td>
                <img class='small-flag' [src]= 'country.flags.svg' >
             </td>  
-           <td>{{country.name.common}}</td>
+           <td class='touch'>{{country.name}}</td>
            <td>{{country.population | number}}</td>
            <td>
-               <a [routerLink]="['/country', country.cca2]"  >click for further details</a>
+               <a [routerLink]="['/country', country.alpha2Code]"  >click for further details</a>
            </td>
        </tr>
     </tbody>

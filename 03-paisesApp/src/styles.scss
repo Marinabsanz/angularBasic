@@ -1,11 +1,65 @@
 
 .small-flag{
     width: 50px;
-}
-
+};
 
 body{
+    
+    color: rgb(245, 245, 246);
 
-    color: rgb(3, 3, 12);
-    background-color: rgb(232, 217, 246);
+};
+
+.background-image{
+    background-image:url('./assets/back.jpg'); opacity:0,1;
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 100%;
+};
+
+th, td{
+
+    background: rgb(253, 252, 250);
+    color: rgb(250, 248, 243);
+    font-size: 1rem;
+    cursor:context-menu;
+    :hover{
+        color: aliceblue;
+    }
+};
+
+
+.waitclass{
+
+    color: rgb(240, 231, 231);
+    background-color: rgb(154, 154, 175);
+    opacity: 60%;
+    font-size: 1,5rem;
 }
+
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: rgb(253, 244, 244);
+
+  }
+
+  .nav-link{
+      cursor: pointer
+  }
+
+ 
+
+  .btn{
+      color: azure;
+      border: black;
+      justify-content: space-around;
+     
+     };
+
+
+  .btn-2{
+      color: rgb(107, 92, 247);
+  }

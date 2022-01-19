@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
-import { debounceTime, Subject } from 'rxjs';
+import {  Subject } from 'rxjs';
+import{debounceTime} from 'rxjs/operators';
 
 
 @Component({
@@ -22,9 +23,7 @@ export class CountryInputComponent implements OnInit{
 
   ngOnInit(): void {
       this.debouncer
-      .pipe(
-        debounceTime(300)
-      )
+      .pipe(debounceTime(300) )
       .subscribe(value => {
       this.OnDebounce.emit(value);
 
@@ -32,7 +31,7 @@ export class CountryInputComponent implements OnInit{
   }
 
   search(){
-this.onEnter.emit(this.term);
+ this.onEnter.emit(this.term);
 
   }
 

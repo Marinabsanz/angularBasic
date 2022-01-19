@@ -14,6 +14,8 @@ export class ByCountryComponent {
 term:    string= '';
 ifError: boolean =false;
 countries: Country []= [];
+countriesSuggested: Country[]=[];
+showSuggestions: boolean= false;
 
   constructor(private CountriesService: CountriesService) { }
 
@@ -36,12 +38,26 @@ countries: Country []= [];
     
    });
 
+
    }
 
    sugestions(term:string){
 
     this.ifError= false;
+    this.term =term;
+    this.showSuggestions = true;
+    
+
+    this.CountriesService.searchCountry(term)
+    .subscribe(countries=> this.countriesSuggested = countries.splice(0,5))
+              //(ifError)=> this.countriesSuggested= [])
 
    }
 
+
+   searchSuggested(term:string)
+{
+this.search(term); 
+
+}
 }

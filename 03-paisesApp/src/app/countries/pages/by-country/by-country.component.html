@@ -1,5 +1,5 @@
-
-<h2>by country</h2>
+<div class="animate__animated animate__fadeIn animate__faster">
+<h2>Country</h2>
 <hr>
 
 <div class='row'>
@@ -13,11 +13,33 @@
     </div>
 </div>
 
+
+
+<ul *ngIf="showSuggestions"
+class='list-group'> 
+ <li *ngFor ='let country of countriesSuggested'
+     class='list-group-item list-group-item-action'>
+     <a class='nav-link' 
+     [routerLink] = "['/country', country.alpha2Code]">
+    </a>
+   {{country.name}}  
+ </li>
+
+ <li class='list-group item list-group-item-action' 
+   (click)= 'searchSuggested( term )'>
+ <a class= 'nav-link'> 
+  {{term}}  </a>
+</li>
+
+</ul>
+
+
+
 <hr>
 
 <div *ngIf="ifError" 
   class= 'alert alert-danger'> 
-  " {{term}} " not found
+  Search " {{term}} " not found
 </div>
 
 <div *ngIf="countries.length>0 " class='row'>
@@ -28,3 +50,7 @@
     </div>
  </div>
  
+
+
+
+</div>

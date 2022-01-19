@@ -1,31 +1,31 @@
 
 
-<h2>by region</h2>
-
+<h3>Region</h3>
 <hr>
+
+<h5> Select the region: <small>{{regionActive}} </small></h5>
 
 <div class='row'>
-    <div class='col'>
-        <app-country-input
-        (onEnter)="search($event)"
-        placeholder= 'Search by region....'
-        > 
-        </app-country-input>
-    </div>
-</div>
+  <div class='col'>
+  <button *ngFor="let region of regions"
+          class='btn btn-outline-primary btn'
+          [ngClass]="{
+             'btn-2': regionActive === region
+         }"
 
-<hr>
+          (click)= 'activeRegion( region )' > 
+          {{region}}
+  </button>
+  </div>
 
-<div *ngIf="ifError" 
-  class= 'alert alert-danger'> 
-  " {{term}} " not found
 </div>
 
 <div *ngIf="countries.length>0 " class='row'>
-    <div class='col'>
-        
-      <app-country-table [countries]= 'countries'></app-country-table>
- 
-    </div>
- </div>
- 
+  <div class='col'>
+      
+    <app-country-table [countries]= 'countries'></app-country-table>
+
+  </div>
+</div>
+
+

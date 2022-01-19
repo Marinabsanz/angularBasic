@@ -13,31 +13,26 @@ import { CountriesService } from '../../services/countries.service';
 export class ByRegionComponent  {
 
  
-term:    string= '';
-ifError: boolean =false;
-countries: Country []= [];
+regions: string[] = ['EU', 'EFTA', 'CARICOM', 'PA', 'AU', 'USAN', 'EEU', 'AL', 'ASEAN', 'CAIS', 'CEFTA', 'NAFTA', 'SAARC']
+regionActive: string= '';
+countries: Country[]=[];
+
+  constructor(private CountriesService: CountriesService) {}
+  
+
+ activeRegion(region:string) {
+
+   if (region === this.regionActive){ return;}
+   this.regionActive= region;
+   this.countries=[];
 
 
-  constructor(private CountriesService: CountriesService) { }
+   this.CountriesService.searchbyRegion(region)
+   .subscribe(countries => ( 
+   this.countries = countries)
 
- 
-  search(term:string) {
+   )
+ } 
 
-    this.ifError= false;
-    this.term= term;
- 
-    this.CountriesService.searchCountry(this.term)
-    .subscribe((countriesresp) => {
- 
-     this.countries = countriesresp;
-   console.log(this.countries)
-      
-    },(err)=> { 
-     this.ifError= true;
-     this.countries  = [];
-     
-    });
- 
-    }
 
-}
+  }
