@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
+import { debounceTime, Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-country-input',
@@ -6,19 +8,41 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styles: [
   ]
 })
-export class CountryInputComponent {
+export class CountryInputComponent implements OnInit{
 
   @Output()onEnter: EventEmitter<string>= new EventEmitter();
+  @Output()OnDebounce: EventEmitter<string>= new EventEmitter();
+  
+
+  @Input() placeholder: string = '';
+
+  debouncer: Subject<string> =new Subject;
 
   term: string = '';
 
+  ngOnInit(): void {
+      this.debouncer
+      .pipe(
+        debounceTime(300)
+      )
+      .subscribe(value => {
+      this.OnDebounce.emit(value);
+
+      })
+  }
 
   search(){
-this.onEnter.emit(this.term)
+this.onEnter.emit(this.term);
+
   }
+
+ keyPressed(event:any){
+  const value= event.target.value;
+
+  this.debouncer.next(this.term);
+ }
 
 
 }
 
-///Al dar click, se acciona función search, la cual dispara el evento onEnter
-//Este onEnter en el html escucha al padre y dispara la función
+

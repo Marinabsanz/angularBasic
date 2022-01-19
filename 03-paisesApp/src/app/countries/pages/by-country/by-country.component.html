@@ -5,7 +5,10 @@
 <div class='row'>
     <div class='col'>
         <app-country-input
-        (onEnter)="search($event)" > 
+        (onEnter)="search($event)"
+        (OnDebounce)="sugestions($event)" 
+        placeholder= 'Search by country....'
+        > 
         </app-country-input>
     </div>
 </div>

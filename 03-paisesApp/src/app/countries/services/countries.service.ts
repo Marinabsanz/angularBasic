@@ -21,9 +21,23 @@ export class CountriesService {
 
     const url= `${this.apiUrl}/name/${term}`;
     return this.http.get<any[]>(url)
-     
-
+    
   }
+
+  searchCapital(term: string): Observable<any[]> {
+
+    const url= `${this.apiUrl}/capital/${term}`;
+    return this.http.get<any[]>(url)
+    
+  }
+
+  searchbyRegion(term: string): Observable<any[]> {
+
+    const url= `${this.apiUrl}/region/${term}`;
+    return this.http.get<any[]>(url)
+    
+  }
+
 
 
 }

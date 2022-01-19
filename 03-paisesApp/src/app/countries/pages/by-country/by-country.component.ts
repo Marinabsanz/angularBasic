@@ -36,6 +36,11 @@ countries: Country []= [];
     
    });
 
+   }
+
+   sugestions(term:string){
+
+    this.ifError= false;
 
    }
 

@@ -1,60 +1,28 @@
 
-
-
-<h2>por capital</h2>
+<h2>by capital</h2>
 <hr>
+
 
 <div class='row'>
     <div class='col'>
-
-        <form autocomplete="off">
-        <input type='text'
-               name='termino'
-               class='form-control'
-               placeholder='Buscar capital...'
-               />
-
-        </form>
+        <app-country-input
+        (onEnter)="search($event)"
+         placeholder= 'Search by capital...'> 
+        </app-country-input>
     </div>
 </div>
 
-
 <hr>
 
-
-
-<div class= 'alert alert-danger'>
-  No se encontró nada con la búsqueda ------
+<div *ngIf="ifError" 
+  class= 'alert alert-danger'> 
+  " {{term}} " not found
 </div>
 
-
-<hr>
-<div class='row'>
+<div *ngIf="countries.length>0 " class='row'>
     <div class='col'>
-        <table class= 'table table-hover'>
-            <thead>
-                <tr>
-                    <th> #  </th>
-                    <th>  Bandera </th>
-                    <th> Nombre  </th>
-                    <th> Población  </th>
-                    <th>  Más info </th>
-                </tr>
-            </thead>
- 
-            <tbody>
-               <tr>
-                   <td>1</td>
-                   <td>bandera</td>
-                   <td>nombre</td>
-                   <td>948984</td>
-                   <td>
-                       <a href='./pais/cri>'ver....></a>
-                   </td>
-               </tr>
-            </tbody>
-          </table>
- 
+        
+      <app-country-table [countries]= 'countries'></app-country-table>
  
     </div>
  </div>
