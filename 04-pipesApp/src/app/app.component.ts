@@ -8,10 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    name: 'pipesApp';
+  name: string = 'marina benitez';
+  age: number= 33;
+  obj={
+    name: 'marina'
+  }
 
 
-showName()
-console.log(this.name)
+showName() {
+  console.log(this.name);
+  console.log(this.age);
+  console.log(this.obj);
+}
+
+
 
 }
